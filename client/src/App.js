@@ -28,7 +28,7 @@ const AuthExample = () => (
 						<Route path="/login" component={Login} />
 						<Route path="/register" component={Register} />
 						<PrivateRoute path="/protected" component={ProtectedRoute} />
-						<Route path="/addevent" component={AddEvent}/>
+						<PrivateRoute path="/addevent" component={AddEvent}/>
 						{/* <Route component={NoMatch} /> */}
 					</Switch>
 				</Container>
