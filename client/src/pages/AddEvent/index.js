@@ -1,5 +1,6 @@
-import React from "react";
-import Card from "./Card"
+import React, {useEffect, useContext} from "react";
+// import Card from "./Card"
+import { UserContext } from "../../utils/UserContext";
 
 function AddEvent (){
     const [user, dispatch] = useContext(UserContext)
