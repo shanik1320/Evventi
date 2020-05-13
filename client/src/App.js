@@ -12,6 +12,7 @@ import Register from "./components/Register";
 import { Container } from "./components/Grid";
 import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
+
 import './App.css';
 import { UserProvider } from "./utils/UserContext";
 
@@ -27,6 +28,8 @@ const AuthExample = () => (
 						<Route path="/login" component={Login} />
 						<Route path="/register" component={Register} />
 						<PrivateRoute path="/protected" component={ProtectedRoute} />
+						
+    
 						{/* <Route component={NoMatch} /> */}
 					</Switch>
 				</Container>
