@@ -12,7 +12,7 @@ const AuthButton = () => {
 
 	return (
 		Auth.isAuthenticated ? (
-			<button className="btn btn-danger"
+			<button className="btn btn"
 				onClick={() => {
 					Auth.signout(() => history.push('/login'))
 					dispatch({
@@ -24,7 +24,7 @@ const AuthButton = () => {
 			</button>
 		) : (
 				<Link
-					className="btn btn-success"
+					className="btn btn success"
 					to="/login"
 				>Login
 				</Link>
