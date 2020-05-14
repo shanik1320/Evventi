@@ -14,7 +14,8 @@ import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import './App.css';
 import { UserProvider } from "./utils/UserContext";
-import AddEvent from "./pages/AddEvent"
+import AddEvent from "./pages/AddEvent";
+import EventForm from './components/EventForm';
 
 //Now we have all the stuff we need .. let's render some components with the Router
 const AuthExample = () => (
@@ -71,6 +72,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 		</div>
 	</Router>
 )
+
 
 
 

@@ -1,15 +1,19 @@
-import React, {useRef} from "react";
-import Card from "../../components/EventForm;
-import { UserContext } from "../../utils/UserContext";
+import React, { useEffect, useContext } from 'react'
+// import EventForm from "../../components/EventForm"
+// import { UserContext } from "../../utils/UserContext";
+import Card from "../../components/Card"
+import Form from "../../components/Form"
+import EventForm from '../../components/EventForm'
 
-function AddEvent (){
-    const eventRef = useRef();
-	const  eventNameRef= useRef();
-	const descriptionRef = useRef();
-
+function AddEvent () {
+   
     return (
-
+        <div className="container">
+                <EventForm/>
+			
+            
+        </div>
     )
 }
 
-export default AddEvent;
+export default AddEvent
