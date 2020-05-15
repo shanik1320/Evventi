@@ -16,6 +16,8 @@ import ProtectedRoute from "./pages/ProtectedRoute";
 import { Button } from 'reactstrap';
 import './App.css';
 import { UserProvider } from "./utils/UserContext";
+import AddEvent from "./pages/AddEvent";
+import EventForm from './components/EventForm';
 
 
 //calendar
@@ -51,8 +53,7 @@ const AuthExample = () => (
 						<Route path="/login" component={Login} />
 						<Route path="/register" component={Register} />
 						<PrivateRoute path="/protected" component={ProtectedRoute} />
-						
-    
+            <PrivateRoute path="/addevent" component={AddEvent}/>
 						{/* <Route component={NoMatch} /> */}
 					</Switch>
 				</Container>
@@ -103,5 +104,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 
 
-export default AuthExample ;
+
+
+export default AuthExample;
+
 
