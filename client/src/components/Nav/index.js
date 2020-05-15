@@ -50,7 +50,7 @@ function Nav() {
             <Link style={buttonStyle} className="btn btn secondary" to="/protected">Calendar</Link>
             <Link style={buttonStyle} className="btn btn secondary" to="/addevent">Add an Event</Link>
             <Link style={buttonStyle} className="btn btn secondary" to="/allevents">Events</Link>
-            <Link style={buttonStyle} className="btn btn secondary" to="/myevents">My Events</Link>
+            <Link style={buttonStyle} className="btn btn secondary" to="/Profile"> Profile</Link>
             {user.username ? "" :
               <Link style={buttonStyle} className="btn btn" to="/register">Register a New User</Link>
             }
