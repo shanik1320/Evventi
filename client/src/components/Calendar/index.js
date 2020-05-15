@@ -6,12 +6,15 @@ class Calendar extends React.Component {
       currentMonth: new Date(),
       selectedDate: new Date()
     };
+
   
     renderHeader() {
-      const dateFormat = "MMMM yyyy";
+      const dateFormat = "MMMM YYYY";
   
       return (
+        
         <div className="header row flex-middle">
+
           <div className="col col-start">
             <div className="icon" onClick={this.prevMonth}>
               chevron_left
@@ -28,7 +31,7 @@ class Calendar extends React.Component {
     }
   
     renderDays() {
-      const dateFormat = "d";
+      const dateFormat = "dddd";
       const days = [];
   
       let startDate = startOfWeek(this.state.currentMonth);
@@ -51,7 +54,7 @@ class Calendar extends React.Component {
       const startDate = startOfWeek(monthStart);
       const endDate = endOfWeek(monthEnd);
   
-      const dateFormat = "d";
+      const dateFormat = "D";
       const rows = [];
   
       let days = [];
