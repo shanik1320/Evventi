@@ -38,7 +38,7 @@ function Nav() {
 
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+    <nav className="navbar navbar-expand-lg navbar bg mb-2">
       <Link className="navbar-brand" to="/">
       <i class="far fa-star"></i>Evventi
         </Link>
@@ -47,10 +47,12 @@ function Nav() {
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
             <Link style={buttonStyle} className=" btn btn secondary" to="/public">Public Page</Link>
-            <Link style={buttonStyle} className="btn btn secondary" to="/protected">Protected Page</Link>
-            <Link style={buttonStyle} className="btn btn secondary" to="addevent">Add an Event</Link>
+            <Link style={buttonStyle} className="btn btn secondary" to="/protected">Calendar</Link>
+            <Link style={buttonStyle} className="btn btn secondary" to="/addevent">Add an Event</Link>
+            <Link style={buttonStyle} className="btn btn secondary" to="/allevents">Events</Link>
+            <Link style={buttonStyle} className="btn btn secondary" to="/profile"> Profile</Link>
             {user.username ? "" :
-              <Link style={buttonStyle} className="btn btn-warning" to="/register">Register a New User</Link>
+              <Link style={buttonStyle} className="btn btn" to="/register">Register a New User</Link>
             }
             <AuthButton />
             

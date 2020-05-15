@@ -1,15 +1,21 @@
-import React, { useEffect, useContext } from 'react'
-// import EventForm from "../../components/EventForm"
+import React, { Component} from 'react'
 // import { UserContext } from "../../utils/UserContext";
-import Card from "../../components/Card"
-import Form from "../../components/Form"
-import EventForm from '../../components/EventForm'
+import EventForm from '../../components/EventForm';
+import {
+	BrowserRouter as Router,
+	Route,
+	Redirect,
+	Switch
+} from 'react-router-dom';
 
 function AddEvent () {
    
     return (
         <div className="container">
                 <EventForm/>
+                <Redirect to={{
+								pathname: '/myevents',
+							}} />
 			
             
         </div>
