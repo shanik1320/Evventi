@@ -5,6 +5,7 @@ import {
 	Redirect,
 	Switch
 } from 'react-router-dom';
+import Calendar from './components/Calendar';
 import Auth from "./utils/Auth";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
@@ -12,11 +13,34 @@ import Register from "./components/Register";
 import { Container } from "./components/Grid";
 import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import { Button } from 'reactstrap';
 import './App.css';
 import { UserProvider } from "./utils/UserContext";
 import AddEvent from "./pages/AddEvent";
 import EventForm from './components/EventForm';
 
+
+//calendar
+class App extends React.Component {
+	render() {
+	  return (
+		<div className="App">
+		  <header>
+			<div id="logo">
+			  <span className="icon">date_range</span>
+			  <span>
+				react<b>calendar</b>
+			  </span>
+			</div>
+		  </header>
+		  <main>
+			<Calendar />
+		  </main>
+		</div>
+	  );
+	}
+  }
+  
 //Now we have all the stuff we need .. let's render some components with the Router
 const AuthExample = () => (
 	<UserProvider>
@@ -29,7 +53,7 @@ const AuthExample = () => (
 						<Route path="/login" component={Login} />
 						<Route path="/register" component={Register} />
 						<PrivateRoute path="/protected" component={ProtectedRoute} />
-						<PrivateRoute path="/addevent" component={AddEvent}/>
+            <PrivateRoute path="/addevent" component={AddEvent}/>
 						{/* <Route component={NoMatch} /> */}
 					</Switch>
 				</Container>
@@ -81,5 +105,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 
 
-export default AuthExample
+
+export default AuthExample;
+
 
