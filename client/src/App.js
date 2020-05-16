@@ -17,7 +17,7 @@ import { Button } from 'reactstrap';
 import './App.css';
 import { UserProvider } from "./utils/UserContext";
 import AddEvent from "./pages/AddEvent";
-import MyEvents from "./pages/MyEvents";
+
 
 
 //calendar
@@ -54,7 +54,7 @@ const AuthExample = () => (
 						<Route path="/register" component={Register} />
 						<PrivateRoute path="/protected" component={ProtectedRoute} />
 						<PrivateRoute path="/addevent" component={AddEvent}/>
-						<PrivateRoute path="/profile" component={MyProfle}/>
+						{/* <PrivateRoute path="/profile" component={MyProfle}/> */}
 
 						{/* <Route component={NoMatch} /> */}
 					</Switch>
