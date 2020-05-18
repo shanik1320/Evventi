@@ -1,0 +1,40 @@
+{
+  "events": [
+    {
+      "name": "name 1",
+      "discription": "3/3/2020",
+      "option": "year",
+      "id": 1
+    },
+    {
+      "name": "name 2",
+      "discription": "3/3/2020",
+      "option": "year",
+      "id": 2
+    },
+    {
+      "name": "name 3",
+      "discription": "3/3/2020",
+      "option": "year",
+      "id": 3
+    },
+    {
+      "name": "nardinegergis@gmail.com",
+      "discription": "sss",
+      "option": "on",
+      "id": 4
+    },
+    {
+      "name": "nardinegeris@gmail.com",
+      "discription": "CXC",
+      "option": "on",
+      "id": 5
+    },
+    {
+      "name": "nardinegergis@gmail.com",
+      "discription": "sss",
+      "option": "on",
+      "id": 6
+    }
+  ]
+}

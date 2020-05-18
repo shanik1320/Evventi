@@ -14,7 +14,7 @@ const routes = require('./routes/index');
 const PORT = process.env.PORT || 3001;
 /* === Call Express as app === */
 const app = express();
-
+const eventRoutes = express.Router();
 
 /* === Middleware === */
 app.use(logger('dev'));
@@ -31,7 +31,7 @@ app.use(require('express-session')({
 }));
 app.use(passport.initialize());
 app.use(flash());
-
+app.use('/event', eventRoutes);
 
 /* Serve up static assets (usually on heroku) */
 if (process.env.NODE_ENV === "production") {
@@ -50,6 +50,16 @@ app.use(function (req, res, next) {
   next(err);
 });
 
+
+eventRoutes.route('/profile').get(function(req, res) {
+  event.find(function(err, event) {
+      if (err) {
+          console.log(err);
+      } else {
+          res.json(event);
+      }
+  });
+});
 /* === Server-Side Authentication w/passport.js on our Model === */
 const Account = require('./models/account');
 passport.use(new LocalStrategy(Account.authenticate()));
