@@ -9,65 +9,50 @@ class EventForm  extends React.Component{
   // const descriptionRef = useRef();
   state= {
     name:'',
-    discription:'',
-    option:'',
-    id: +6
+    description:'',
+    option:''
+    
   }
   handleChangeName = event => {
     this.setState({ name: event.target.value });
   }
   handleChangeDis = event => {
-    this.setState({ discription: event.target.value });
+    this.setState({ description: event.target.value });
   }
   handleChangeOption = event => {
     this.setState({ option: event.target.value });
   }
   handleSubmit = e => {
     e.preventDefault();
+  console.log("form submitted");
+  
+   
 
-    // const event = {
-    //   name: this.state.name,
-    //   discription: this.state.discription,
-    //   option: this.state.option,
-    //   id:4
-    // };
-
-    axios.post(`http://localhost:4000/events`,  {
+    axios.post(`api/events/addevent`,  {
       name: this.state.name,
-      discription: this.state.discription,
+      description: this.state.description,
       option: this.state.option,
-      id:+this.state.id
-    } )
-      .then(res => {
+      
+    } ).then(res => {
         console.log(res);
-        console.log(res.data);
+        console.log("posting event");
+        
       })
     }
 render(){
   return (
     <Card title="Make your own event">
-			<Form
-				// ref={formRef}
-				// onSubmit={(e) => {
-				// 	e.preventDefault();
-				// 	return data ({
-				// 		eventname: eventNameRef.current.value,
-        //     description: descriptionRef.current.value,
-            
-				// 	});
-        // }}
-        onSubmit={this.handleSubmit}
-        >
+		
     <Form>
       <FormGroup>
-        <Label for="exampleEmail">Event Name</Label>
-        <Input type="email" name="email" id="exampleEmail" placeholder="Add Name"
+        <Label for="eventName">Event Name</Label>
+        <Input type="textarea" name="name" id="eventName" placeholder="Add Name"
          onChange={this.handleChangeName}
         />
       </FormGroup>
       <FormGroup>
-        <Label for="exampleText">Event Description</Label>
-        <Input type="textarea" name="text" id="exampleText" 
+        <Label for="description">Event Description</Label>
+        <Input type="textarea" name="description" id="description" 
         onChange={this.handleChangeDis}
         />
       </FormGroup>
@@ -90,9 +75,9 @@ render(){
           </Label>
         </FormGroup>
       </FormGroup>
-      <Button>Submit</Button>
+      <Button onClick={this.handleSubmit}>Submit</Button>
     </Form>
-    </Form>
+    
     </Card>
   );
 }
