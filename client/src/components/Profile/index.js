@@ -7,10 +7,11 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:4000/events`)
+        axios.get('api/events')
             .then(res => {
-                const events = res.data;
-                this.setState({ events });
+                console.log("res.data", res.data);
+                
+                this.setState({ events:res.data });
             })
     }
     render() {
