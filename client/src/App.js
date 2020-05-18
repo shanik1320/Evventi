@@ -9,18 +9,20 @@ import Calendar from './components/Calendar';
 import Auth from "./utils/Auth";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
+import Profile from "./components/Profile";
 import Register from "./components/Register";
 import { Container } from "./components/Grid";
 import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import Myprofile from "./pages/Profile";
 import { Button } from 'reactstrap';
 import './App.css';
 import { UserProvider } from "./utils/UserContext";
 import AddEvent from "./pages/AddEvent";
-import MyEvents from "./pages/MyEvents";
 
 
-//calendar
+
+
 class App extends React.Component {
 	render() {
 	  return (
@@ -51,10 +53,11 @@ const AuthExample = () => (
 					<Switch>
 						<Route path="/public" component={PublicRoute} />
 						<Route path="/login" component={Login} />
+						<Route path="/Profile" component={Profile} />
 						<Route path="/register" component={Register} />
 						<PrivateRoute path="/protected" component={ProtectedRoute} />
 						<PrivateRoute path="/addevent" component={AddEvent}/>
-						<PrivateRoute path="/profile" component={MyProfle}/>
+						
 
 						{/* <Route component={NoMatch} /> */}
 					</Switch>
