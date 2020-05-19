@@ -53,7 +53,7 @@ const AuthExample = () => (
 					<Switch>
 						<Route path="/public" component={PublicRoute} />
 						<Route path="/login" component={Login} />
-						<Route path="/Profile" component={Profile} />
+						<PrivateRoute path="/Profile" component={Profile} />
 						<Route path="/register" component={Register} />
 						<PrivateRoute path="/protected" component={ProtectedRoute} />
 						<PrivateRoute path="/addevent" component={AddEvent}/>
