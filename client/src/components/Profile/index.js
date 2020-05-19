@@ -22,7 +22,7 @@ class Profile extends React.Component {
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
-                                <th scope="col">Discription</th>
+                                <th scope="col">Description</th>
                                 <th scope="col">Option</th>
                                 <th scope="col">Actions</th>
                             </tr>
@@ -31,7 +31,7 @@ class Profile extends React.Component {
                             {this.state.events.map(event =>
                                 <tr>
                                     <td >{event.name}</td>
-                                    <td>{event.discription}</td>
+                                    <td>{event.description}</td>
                                     <td>{event.option}</td>
                                     <td>action</td>
                                 </tr>
