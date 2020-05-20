@@ -26,8 +26,6 @@ class EventForm  extends React.Component{
     e.preventDefault();
   console.log("form submitted");
   
-   
-
     axios.post(`api/events/addevent`,  {
       name: this.state.name,
       description: this.state.description
