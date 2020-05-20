@@ -1,4 +1,6 @@
 import React, { useRef, Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import Card from "../Card";
 import axios from 'axios';
 class Profile extends React.Component {
@@ -10,10 +12,21 @@ class Profile extends React.Component {
         axios.get('api/events')
             .then(res => {
                 console.log("res.data", res.data);
-                
-                this.setState({ events:res.data });
+
+                this.setState({ events: res.data });
             })
     }
+    handleDelete(id) {
+        //delete this one from db
+        axios.delete(`api/events/`+ id).then(res => {
+            console.log(`delete ${id}`);
+        })
+        //update the state with new array
+       const events = this.state.events.filter(event => event._id != id )
+       this.setState({events});
+     }
+
+
     render() {
         return (
             <div className=" container">
@@ -23,21 +36,26 @@ class Profile extends React.Component {
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Option</th>
-                                <th scope="col">Actions</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             {this.state.events.map(event =>
-                                <tr>
+                                <tr key={event._id}>
                                     <td >{event.name}</td>
                                     <td>{event.description}</td>
-                                    <td>{event.option}</td>
-                                    <td>action</td>
+                                    <td> <button onClick={() => this.handleEdit(event._id)}>Edit</button></td>
+                                    <td>
+
+
+                                        <button onClick={() => this.handleDelete(event._id)}>Delete</button>
+
+
+                                    </td>
+
                                 </tr>
                             )}
-
-
                         </tbody>
                     </table>
                 </Card>
