@@ -30,8 +30,8 @@ class EventForm  extends React.Component{
 
     axios.post(`api/events/addevent`,  {
       name: this.state.name,
-      description: this.state.description,
-      option: this.state.option,
+      description: this.state.description
+     
       
     } ).then(res => {
         console.log(res);
@@ -58,22 +58,7 @@ render(){
       </FormGroup>
       <FormGroup tag="fieldset">
         <legend></legend>
-        <FormGroup check>
-          <Label check>
-            <Input type="radio" name="radio1" 
-            onChange={this.handleChangeOption}
-            />{' '}
-            Public Event
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input type="radio" name="radio1" 
-            onChange={this.handleChangeOption}
-            />{' '}
-            Private Event
-          </Label>
-        </FormGroup>
+        
       </FormGroup>
       <Button onClick={this.handleSubmit}>Submit</Button>
     </Form>

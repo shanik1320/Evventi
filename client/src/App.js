@@ -19,6 +19,7 @@ import { Button } from 'reactstrap';
 import './App.css';
 import { UserProvider } from "./utils/UserContext";
 import AddEvent from "./pages/AddEvent";
+import EditEvent from "./pages/EditEvent";
 
 
 
@@ -57,6 +58,8 @@ const AuthExample = () => (
 						<Route path="/register" component={Register} />
 						<PrivateRoute path="/protected" component={ProtectedRoute} />
 						<PrivateRoute path="/addevent" component={AddEvent}/>
+						<PrivateRoute path="/editevent/:id" component={EditEvent}/>
+
 						
 
 						{/* <Route component={NoMatch} /> */}

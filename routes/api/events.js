@@ -10,7 +10,7 @@ router.route("/addevent").post(eventsController.createEvent);
 
 router.route("/:id").delete(eventsController.deleteEvent);
 
-
+router.route("/:id").get(eventsController.getEvent);
 
 
 module.exports = router;

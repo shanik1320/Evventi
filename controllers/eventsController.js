@@ -34,5 +34,19 @@ module.exports = {
 				res.redirect('/profile')
 			})
 
-	}
+	},
+	getEvent: function (req, res) {
+		//get the id from the request
+		const {id} = req.params;
+		console.log('/get Event', id);
+		//remove this one from the db
+		Event.findById(id)
+			.then(data => {
+				res.json(data);
+			})
+
+	},
+
+	
+	
 }

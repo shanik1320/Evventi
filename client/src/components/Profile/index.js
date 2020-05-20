@@ -26,6 +26,16 @@ class Profile extends React.Component {
        this.setState({events});
      }
 
+     handleEdit(id) {
+        //update this one from db
+        axios.post(`api/events/addevent`+ id).then(res => {
+            console.log(`Edit ${id}`);
+        })
+        //update the state with new array
+       const events = this.state.events.update(event => event._id != id )
+       this.setState({events});
+     }
+
 
     render() {
         return (
@@ -45,7 +55,7 @@ class Profile extends React.Component {
                                 <tr key={event._id}>
                                     <td >{event.name}</td>
                                     <td>{event.description}</td>
-                                    <td> <button onClick={() => this.handleEdit(event._id)}>Edit</button></td>
+                                    <td> <Link to={{pathname:`/editevent/${event._id}`}}>Edit</Link></td>
                                     <td>
 
 
