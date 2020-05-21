@@ -4,7 +4,7 @@
 it's a MERN full-stack event planning app 
 the user can create the invitation events and can save it on his profile so he can edit or delete it after the event happened
 
-![image]C:\Users\MN\OneDrive\Desktop\Evventi\client\src\assets\imgs\evnt.png
+![image](C:\Users\MN\OneDrive\Desktop\Evventi\client\src\assets\imgs\evnt.png)
 
 # Built With
 Front End: React, Redux, React Router 
