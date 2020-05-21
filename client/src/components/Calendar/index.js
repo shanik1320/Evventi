@@ -9,7 +9,7 @@ class Calendar extends React.Component {
 
   
     renderHeader() {
-      const dateFormat = "MMMM yyyy";
+      const dateFormat = "MMMM YYYY";
   
       return (
         
@@ -54,7 +54,7 @@ class Calendar extends React.Component {
       const startDate = startOfWeek(monthStart);
       const endDate = endOfWeek(monthEnd);
   
-      const dateFormat = "d";
+      const dateFormat = "D";
       const rows = [];
   
       let days = [];
