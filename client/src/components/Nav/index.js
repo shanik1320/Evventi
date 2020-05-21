@@ -7,6 +7,7 @@ import { UserContext } from "../../utils/UserContext";
 //I want to add some basic inline styling here, even though we are bringing in styles
 const buttonStyle = {
   marginRight: 10
+  
 };
 
 function Nav() {
@@ -38,7 +39,7 @@ function Nav() {
 
 
   return (
-    <nav className="navbar navbar-expand-lg navbar bg mb-2">
+    <nav className="navbar navbar-expand-lg navbar bg mb-2 ">
       <Link className="navbar-brand" to="/">
       <i class="far fa-star"></i>Evventi
         </Link>
@@ -46,13 +47,12 @@ function Nav() {
         {user.username ? <span className="userText text-white ml-3 pt-1" to="#">Hi {user.username} !</span> : ""}
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
-            <Link style={buttonStyle} className=" btn btn secondary" to="/public">Public Page</Link>
-            <Link style={buttonStyle} className="btn btn secondary" to="/protected">Calendar</Link>
-            <Link style={buttonStyle} className="btn btn secondary" to="/addevent">Add an Event</Link>
-            <Link style={buttonStyle} className="btn btn secondary" to="/allevents">Events</Link>
-            <Link style={buttonStyle} className="btn btn secondary" to="/profile"> Profile</Link>
+            <Link style={buttonStyle} className=" btn btn-secondary btn-lg" to="/public">Welcome</Link>
+            <Link style={buttonStyle} className="btn btn-secondary btn-lg" to="/protected">Calendar</Link>
+            <Link style={buttonStyle} className="btn btn-secondary btn-lg" to="/addevent">Add an Event</Link>
+            <Link style={buttonStyle} className="btn btn-secondary btn-lg" to="/profile"> Profile</Link>
             {user.username ? "" :
-              <Link style={buttonStyle} className="btn btn" to="/register">Register a New User</Link>
+              <Link style={buttonStyle} className="btn btn-secondary btn-lg" to="/register">Register a New User</Link>
             }
             <AuthButton />
             
