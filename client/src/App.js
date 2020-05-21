@@ -14,12 +14,13 @@ import Register from "./components/Register";
 import { Container } from "./components/Grid";
 import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
-import Myprofile from "./pages/Profile";
+import Myprofile from "./pages/Myprofile";
 import { Button } from 'reactstrap';
 import './App.css';
 import { UserProvider } from "./utils/UserContext";
 import AddEvent from "./pages/AddEvent";
 import EditEvent from "./pages/EditEvent";
+import EventForm from './components/EventForm';
 
 
 
@@ -54,11 +55,13 @@ const AuthExample = () => (
 					<Switch>
 						<Route path="/public" component={PublicRoute} />
 						<Route path="/login" component={Login} />
-						<Route path="/Profile" component={Profile} />
+						<Route exact path="/profile" component={Profile} />
+						
 						<Route path="/register" component={Register} />
-						<PrivateRoute path="/protected" component={ProtectedRoute} />
-						<PrivateRoute path="/addevent" component={AddEvent}/>
-						<PrivateRoute path="/editevent/:id" component={EditEvent}/>
+						<Route exact path="/protected" component={ProtectedRoute} />
+						<Route exact path="/addevent" component={EventForm}/>
+						<Route path="/editevent/:id" component={EditEvent}/>
+						{/* <Route match="profile" component={Myprofile} /> */}
 
 						
 

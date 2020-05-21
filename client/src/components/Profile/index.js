@@ -55,11 +55,11 @@ class Profile extends React.Component {
                                 <tr key={event._id}>
                                     <td >{event.name}</td>
                                     <td>{event.description}</td>
-                                    <td> <Link to={`/editevent/${event._id}`}>Edit</Link></td>
+                                    <td> <Link className="btn btn-success" to={`/editevent/${event._id}`}>Edit</Link></td>
                                     <td>
 
 
-                                        <button onClick={() => this.handleDelete(event._id)}>Delete</button>
+                                        <button className="btn btn-danger" onClick={() => this.handleDelete(event._id)}>Delete</button>
 
 
                                     </td>

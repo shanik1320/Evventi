@@ -1,12 +1,17 @@
 import React, {useRef} from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import Card from "../../components/Card";
+import {Redirect, BrowserRouter, Link} from "react-router-dom"
+import {withRouter, browserHistory} from "react-router"
 import axios from 'axios';
 
 class EventForm  extends React.Component{
-  // const formRef = useRef();
-	// const eventNameRef = useRef();
-  // const descriptionRef = useRef();
+  // constructor(props){
+  //   super(props)
+  //   console.log(props)
+  // }
+  
+
   state= {
     name:'',
     description:'',
@@ -34,11 +39,14 @@ class EventForm  extends React.Component{
     } ).then(res => {
         console.log(res);
         console.log("posting event");
-        
-      })
+        console.log(this.props.history)
+        // return <Redirect to="/profile"/>
+        this.props.history.push("/profile")
+      }) 
     }
 render(){
   return (
+  
     <Card title="Make your own event">
 		
     <Form>
@@ -58,10 +66,11 @@ render(){
         <legend></legend>
         
       </FormGroup>
-      <Button onClick={this.handleSubmit}>Submit</Button>
+       <Button onClick = {this.handleSubmit}>Submit</Button>
     </Form>
     
     </Card>
+  
   );
 }
 }

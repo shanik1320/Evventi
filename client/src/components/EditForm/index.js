@@ -53,6 +53,7 @@ class EditEventComponent extends React.Component {
         } ).then(res => {
             console.log(res);
             console.log(this.state.name);
+            this.props.history.push("/profile")
             
             console.log("Edit event");
             

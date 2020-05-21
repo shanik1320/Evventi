@@ -13,9 +13,6 @@ function AddEvent () {
     return (
         <div className="container">
                 <EventForm/>
-                <Redirect to={{
-								pathname: '/myevents',
-							}} />
 			
             
         </div>

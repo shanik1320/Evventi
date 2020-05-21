@@ -9,9 +9,6 @@ function Myprofile() {
     return (
         <div className="container">
             <Profile />
-            {/* <Redirect to={{
-                             pathname: '/myprofile',
-                         }} /> */}
 
 
         </div>
