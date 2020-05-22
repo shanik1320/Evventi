@@ -53,8 +53,7 @@ class EditEventComponent extends React.Component {
         } ).then(res => {
             console.log(res);
             console.log(this.state.name);
-            this.props.history.push("/profile")
-            
+            this.props.history.push("/profile");
             console.log("Edit event");
             
           })
@@ -90,7 +89,7 @@ class EditEventComponent extends React.Component {
             <legend></legend>
             
           </FormGroup>
-          <Button onClick={this.handleSubmit}>Submit</Button>
+          <Button onClick={this.handleSubmit.bind(this)}>Submit</Button>
         </Form>
         
         </Card>
