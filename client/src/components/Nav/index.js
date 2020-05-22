@@ -44,7 +44,7 @@ function Nav() {
       <i class="far fa-star"></i>Evventi
         </Link>
       <div className={`${open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
-        {user.username ? <span className="userText text-white ml-3 pt-1" to="#">Hi {user.username} !</span> : ""}
+        {user.username ? <span className="userText text-black ml-3 pt-1" to="#">Hi {user.username} !</span> : ""}
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
             <Link style={buttonStyle} className=" btn btn-secondary btn-lg" to="/public">Welcome</Link>
