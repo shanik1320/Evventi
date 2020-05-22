@@ -61,6 +61,7 @@ passport.deserializeUser(Account.deserializeUser());
 
 /* === Mongoose Connection === */
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/evventi', { useNewUrlParser: true, useUnifiedTopology: true });
+console.log("mongose connected");
 
 /* === Error Handling === */
 
