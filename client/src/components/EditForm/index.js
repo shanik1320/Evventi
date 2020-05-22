@@ -51,10 +51,14 @@ class EditEventComponent extends React.Component {
            
           
         } ).then(res => {
-            console.log(res);
-            console.log(this.state.name);
-            this.props.history.push("/profile");
-            console.log("Edit event");
+            //console.log(res);
+            //alert("event updated")
+            //console.log(this.props.history);
+            window.location.href = "/profile";
+            //console.log(this.state.name);
+            //this.props.history.push("/profile");
+            // window.location.replace("https://stormy-coast-97431.herokuapp.com/profile");
+            //console.log("Edit event");
             
           })
         }
