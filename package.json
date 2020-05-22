@@ -38,6 +38,9 @@
     "react-dom": "^16.13.1",
     "reactstrap": "^8.4.1"
   },
+  "engines": {
+    "node": "10.16.0"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shanik1320/Evventi.git"
